@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>YANLONG GLOBAL</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#fafaf9;color:#1c1917;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 6rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 30%,rgba(217,119,6,.06),transparent 70%);pointer-events:none}
+.hero-content{max-width:880px;position:relative;z-index:1}
+.hero .brand{font-size:.75rem;letter-spacing:.35em;text-transform:uppercase;color:#a8a29e;margin-bottom:1.5rem}
+.hero h1{font-size:clamp(2.4rem,5.5vw,4.6rem);font-weight:500;letter-spacing:-.03em;line-height:1.15;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:#d97706}
+.hero p{font-size:1.1rem;color:#78716c;max-width:540px;margin-bottom:3rem;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 2rem;border-radius:999px;font-size:.95rem;font-weight:500;transition:all .25s;border:none;cursor:pointer}
+.btn-primary{background:#1c1917;color:#fafaf9}
+.btn-primary:hover{background:#44403c;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:#1c1917;border:1px solid #d6d3d1}
+.btn-outline:hover{border-color:#1c1917;transform:translateY(-1px)}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+@media(max-width:768px){.hero{padding:5rem 1.5rem 4rem}.hero-actions{flex-direction:column}.btn{justify-content:center}}
+</style>
+</head>
+<body>
+<section class="hero">
+<div class="hero-content">
+<div class="brand">YANLONG GLOBAL</div>
+<h1>Premium Products<br>Sourced &amp; Delivered <em>Worldwide</em></h1>
+<p>深耕国际贸易十余年，为全球客户提供高品质产品与一站式供应链服务。</p>
+<div class="hero-actions">
+<a href="catalog.html" class="btn btn-primary">浏览产品目录 &#8594;</a>
+<a href="contact.html" class="btn btn-outline">联系我们</a>
+</div>
+</div>
+</section>
+</body>
+</html>
