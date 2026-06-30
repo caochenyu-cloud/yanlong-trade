@@ -3,41 +3,261 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Kechuan Machinery</title>
+<title>Kechuan Machinery · Precision Machined Parts &amp; OEM Services</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;overflow:hidden}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#fafaf9;color:#1c1917;line-height:1.6}
 a{text-decoration:none;color:inherit}
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 6rem;position:relative;overflow:hidden}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(250,250,249,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.04)}
+nav .logo{font-weight:600;font-size:1rem;letter-spacing:-.02em}
+nav .logo span{color:#d97706}
+nav .nav-links{display:flex;gap:2rem;list-style:none}
+nav .nav-links a{font-size:.85rem;color:#57534e;transition:color .2s}
+nav .nav-links a:hover{color:#1c1917}
+@media(max-width:768px){nav{padding:1rem 1.5rem}nav .nav-links{gap:1rem}nav .nav-links a{font-size:.8rem}}
+
+/* Sections */
+section{padding:6rem 3rem}
+section.dark{background:#1c1917;color:#fafaf9}
+.section-title{text-align:center;margin-bottom:3rem}
+.section-title small{display:block;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:#a8a29e;margin-bottom:.4rem}
+.section-title h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:500;letter-spacing:-.02em}
+.dark .section-title small{color:rgba(255,255,255,.4)}
+.dark .section-title h2{color:#fafaf9}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 6rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 30%,rgba(217,119,6,.06),transparent 70%);pointer-events:none}
 .hero-content{max-width:880px;position:relative;z-index:1}
-.hero .brand-cn{font-size:1.8rem;font-weight:500;letter-spacing:-.02em;color:#1c1917;margin-bottom:.25rem}
-.hero .brand-en{font-size:.75rem;letter-spacing:.35em;text-transform:uppercase;color:#a8a29e;margin-bottom:2rem}
-.hero h1{font-size:clamp(2rem,4.5vw,3.8rem);font-weight:500;letter-spacing:-.03em;line-height:1.15;margin-bottom:1.5rem}
+.hero .hero-brand{font-size:.75rem;letter-spacing:.35em;text-transform:uppercase;color:#a8a29e;margin-bottom:.5rem}
+.hero h1{font-size:clamp(2rem,5vw,4rem);font-weight:500;letter-spacing:-.03em;line-height:1.15;margin-bottom:1.2rem}
 .hero h1 em{font-style:normal;color:#d97706}
-.hero p{font-size:1.1rem;color:#78716c;max-width:540px;margin-bottom:3rem;line-height:1.8}
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 2rem;border-radius:999px;font-size:.95rem;font-weight:500;transition:all .25s;border:none;cursor:pointer}
+.hero p{font-size:1.05rem;color:#78716c;max-width:580px;margin-bottom:2.5rem;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.8rem;border-radius:999px;font-size:.9rem;font-weight:500;transition:all .25s;border:none;cursor:pointer}
 .btn-primary{background:#1c1917;color:#fafaf9}
 .btn-primary:hover{background:#44403c;transform:translateY(-1px)}
 .btn-outline{background:transparent;color:#1c1917;border:1px solid #d6d3d1}
 .btn-outline:hover{border-color:#1c1917;transform:translateY(-1px)}
+.btn-gold{background:#d97706;color:#1c1917}
+.btn-gold:hover{background:#f59e0b;transform:translateY(-1px)}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-@media(max-width:768px){.hero{padding:5rem 1.5rem 4rem}.hero-actions{flex-direction:column}.btn{justify-content:center}
-.hero .brand-cn{font-size:1.4rem}}
+@media(max-width:768px){.hero{padding:6rem 1.5rem 4rem}.hero-actions{flex-direction:column}.btn{justify-content:center}}
+
+/* OEM 3-Step */
+.oem-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;max-width:1100px;margin:0 auto}
+.oem-step{text-align:center;padding:2rem;background:#fff;border-radius:1.2rem;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.oem-step .step-num{display:inline-flex;align-items:center;justify-content:center;width:3rem;height:3rem;border-radius:50%;background:#1c1917;color:#fafaf9;font-size:1.1rem;font-weight:500;margin-bottom:1.2rem}
+.oem-step h3{font-size:1rem;font-weight:500;margin-bottom:.5rem}
+.oem-step p{font-size:.85rem;color:#78716c;line-height:1.7}
+.oem-step .step-icon{font-size:2rem;margin-bottom:.5rem}
+@media(max-width:768px){.oem-steps{grid-template-columns:1fr}}
+
+/* Product Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.cat-card{background:#fff;border-radius:1rem;padding:2rem;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.03);border:1px solid #f0efed;transition:all .3s}
+.cat-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.cat-card .cat-icon{font-size:2.2rem;margin-bottom:.8rem}
+.cat-card h3{font-size:1rem;font-weight:500;margin-bottom:.3rem}
+.cat-card .cat-en{font-size:.75rem;color:#a8a29e;letter-spacing:.05em;margin-bottom:.6rem}
+.cat-card p{font-size:.82rem;color:#78716c;line-height:1.6}
+
+/* Tech Specs */
+.specs-wrap{max-width:900px;margin:0 auto;overflow-x:auto}
+.specs-wrap table{width:100%;border-collapse:collapse;font-size:.85rem}
+.specs-wrap th,.specs-wrap td{padding:.9rem 1.2rem;text-align:left;border-bottom:1px solid #e7e5e4}
+.specs-wrap th{background:#f5f5f4;font-weight:500;color:#57534e;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
+.specs-wrap td{color:#1c1917}
+.specs-wrap tr:last-child td{border-bottom:none}
+.specs-wrap .spec-label{color:#a8a29e;font-size:.8rem}
+
+/* Capabilities list */
+.cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;max-width:1000px;margin:0 auto}
+.cap-item{text-align:center;padding:1.5rem}
+.cap-item .cap-icon{font-size:1.8rem;margin-bottom:.6rem}
+.cap-item h4{font-size:.95rem;font-weight:500;margin-bottom:.3rem;color:#fafaf9}
+.cap-item p{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6}
+
+/* CTA Section */
+.cta{text-align:center;padding:5rem 3rem}
+.cta h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:500;margin-bottom:1rem}
+.cta p{color:#78716c;max-width:500px;margin:0 auto 2rem;font-size:.95rem}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* Footer */
+footer{padding:2rem 3rem;text-align:center;font-size:.8rem;color:#a8a29e;border-top:1px solid #e7e5e4;background:#fafaf9}
+
+/* Floating WhatsApp */
+.whatsapp-float{position:fixed;bottom:2rem;right:2rem;z-index:1000;display:flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;padding:.7rem 1.3rem;border-radius:999px;font-size:.85rem;font-weight:500;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:all .25s;cursor:pointer}
+.whatsapp-float:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(37,211,102,.45)}
+.whatsapp-float .wa-icon{font-size:1.4rem}
+
+/* Responsive tweaks */
+@media(max-width:768px){section{padding:4rem 1.5rem}.cta{padding:4rem 1.5rem}}
 </style>
 </head>
 <body>
-<section class="hero">
+
+<!-- Nav -->
+<nav>
+<div class="logo">Kechuan <span>Machinery</span></div>
+<ul class="nav-links">
+<li><a href="#products">Products</a></li>
+<li><a href="#oem">OEM Service</a></li>
+<li><a href="#specs">Specifications</a></li>
+<li><a href="catalog.html">Catalog</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
 <div class="hero-content">
-<div class="brand-en" style="font-size:.95rem;letter-spacing:.25em;margin-bottom:1.8rem">KECHUAN MACHINERY</div>
-<h1>Premium Products<br>Sourced &amp; Delivered <em>Worldwide</em></h1>
-<p>深耕行业多年，为全球客户提供高品质机械配件与一站式供应链服务。</p>
+<div class="hero-brand">KECHUAN MACHINERY</div>
+<h1>Precision Machined Parts<br>From Drawing to Delivery<em> — Worldwide</em></h1>
+<p>Specializing in OEM/ODM custom gears, sprockets, shafts, and mechanical components. We machine to your exact specifications — ANSI, DIN, ISO standards, all materials.</p>
 <div class="hero-actions">
-<a href="catalog.html" class="btn btn-primary">浏览产品目录 &#8594;</a>
-<a href="contact.html" class="btn btn-outline">联系我们</a>
+<a href="catalog.html" class="btn btn-primary">View Catalog &#8594;</a>
+<a href="#oem" class="btn btn-outline">OEM Custom Parts &#8594;</a>
 </div>
 </div>
 </section>
+
+<!-- OEM 3-Step Process -->
+<section id="oem">
+<div class="section-title">
+<small>OEM / ODM Service</small>
+<h2>Custom Parts From Your Drawings — in 3 Steps</h2>
+<p style="color:#78716c;font-size:.9rem;margin-top:.5rem">Send us your CAD or PDF, we handle the rest.</p>
+</div>
+<div class="oem-steps">
+<div class="oem-step">
+<div class="step-icon">&#128196;</div>
+<div class="step-num">1</div>
+<h3>Upload Your Drawings</h3>
+<p>Send your CAD, PDF, or hand sketch with material &amp; quantity requirements. We accept all common formats.</p>
+</div>
+<div class="oem-step">
+<div class="step-icon">&#128269;</div>
+<div class="step-num">2</div>
+<h3>Engineering Review &amp; Quote</h3>
+<p>Our team reviews your specifications and responds with a competitive quote within <strong>24 hours</strong>.</p>
+</div>
+<div class="oem-step">
+<div class="step-icon">&#9881;&#65039;</div>
+<div class="step-num">3</div>
+<h3>Precision Manufacturing &amp; Delivery</h3>
+<p>From prototype to mass production — hobbing, milling, heat treatment, and surface finishing, all controlled in-house.</p>
+</div>
+</div>
+</section>
+
+<!-- Product Categories -->
+<section id="products" style="background:#fff">
+<div class="section-title">
+<small>Product Categories</small>
+<h2>What We Manufacture</h2>
+</div>
+<div class="cat-grid">
+<div class="cat-card">
+<div class="cat-icon">&#9881;</div>
+<h3>链轮</h3>
+<div class="cat-en">Sprockets</div>
+<p>ANSI / BS / DIN standard sprockets, custom tooth profiles, single &amp; multi-strand. Roller chain, conveyor chain types.</p>
+</div>
+<div class="cat-card">
+<div class="cat-icon">&#9881;</div>
+<h3>正齿轮</h3>
+<div class="cat-en">Spur Gears</div>
+<p>Module M0.5–M12, precision hobbing, 45# steel / 40Cr / stainless steel. Ground or shaved tooth finish available.</p>
+</div>
+<div class="cat-card">
+<div class="cat-icon">&#9881;</div>
+<h3>伞齿轮</h3>
+<div class="cat-en">Bevel Gears</div>
+<p>Straight &amp; spiral bevel gears, custom ratios, carburized &amp; hardened. Used in agricultural &amp; industrial transmissions.</p>
+</div>
+<div class="cat-card">
+<div class="cat-icon">&#9881;</div>
+<h3>花键轴</h3>
+<div class="cat-en">Spline Shafts</div>
+<p>Involute &amp; straight-sided splines, DIN 5480 / ANSI B92.1. Ground or rolled, with induction hardening options.</p>
+</div>
+</div>
+</section>
+
+<!-- Technical Specifications Table -->
+<section id="specs">
+<div class="section-title">
+<small>Technical Capabilities</small>
+<h2>Specifications &amp; Standards</h2>
+</div>
+<div class="specs-wrap">
+<table>
+<tr><th>Parameter</th><th>Range / Available Options</th></tr>
+<tr><td class="spec-label">Module (模数)</td><td>M0.5 – M12 (Spur &amp; Helical Gears)</td></tr>
+<tr><td class="spec-label">Pitch (节距)</td><td>ANSI #25 – #240 / BS 04B – 32B</td></tr>
+<tr><td class="spec-label">Standards</td><td>ANSI / DIN / ISO / JIS / GB</td></tr>
+<tr><td class="spec-label">Materials</td><td>45# Steel, 40Cr, 20CrMnTi, 42CrMo, Stainless Steel 304/316, Brass, Nylon</td></tr>
+<tr><td class="spec-label">Heat Treatment</td><td>Carburizing, Induction Hardening (表面淬火), Nitriding, Through Hardening</td></tr>
+<tr><td class="spec-label">Machining</td><td>Hobbing (滚齿), Shaping, Milling, Broaching, Grinding, Wire EDM</td></tr>
+<tr><td class="spec-label">Surface Finishing</td><td>Black Oxide, Zinc Plating, Dacromet, Phosphating, Polishing</td></tr>
+<tr><td class="spec-label">Tolerance</td><td>Up to ISO Grade 6 / DIN 6 (for ground gears)</td></tr>
+</table>
+</div>
+</section>
+
+<!-- Capabilities dark section -->
+<section class="dark" style="text-align:center">
+<div class="section-title">
+<small>Why Choose Us</small>
+<h2>Our Manufacturing Capabilities</h2>
+</div>
+<div class="cap-grid">
+<div class="cap-item">
+<div class="cap-icon">&#128736;</div>
+<h4>OEM from Drawings</h4>
+<p>Any custom part machined to your print, from prototype to high volume.</p>
+</div>
+<div class="cap-item">
+<div class="cap-icon">&#9201;</div>
+<h4>Fast Quotation</h4>
+<p>Engineering review &amp; quote within 24 hours.</p>
+</div>
+<div class="cap-item">
+<div class="cap-icon">&#127758;</div>
+<h4>Global Shipping</h4>
+<p>Reliable logistics — FOB, CIF, DDP to any destination worldwide.</p>
+</div>
+<div class="cap-item">
+<div class="cap-icon">&#9989;</div>
+<h4>Quality Control</h4>
+<p>Full inspection reports, material certificates, and traceability.</p>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+<h2>Ready to Start Your Order?</h2>
+<p>Send us your drawings and requirements. We'll get back to you with a quote within 24 hours.</p>
+<div class="cta-actions">
+<a href="mailto:yashuoliu678@gmail.com" class="btn btn-primary">&#9993; Email Your Drawings</a>
+<a href="catalog.html" class="btn btn-outline">Browse Product Catalog</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+&copy; 2026 Kechuan Machinery · Precision Machined Parts Manufacturer
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/861380000000" target="_blank" rel="noopener" class="whatsapp-float">
+<span class="wa-icon">&#128242;</span> WhatsApp
+</a>
+
 </body>
 </html>
