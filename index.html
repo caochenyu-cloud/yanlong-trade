@@ -57,8 +57,16 @@ section.dark{background:#1c1917;color:#fafaf9}
 
 /* Product Categories */
 .cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
-.cat-card{background:#fff;border-radius:1rem;padding:2rem;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.03);border:1px solid #f0efed;transition:all .3s}
+.cat-card{position:relative;border-radius:1rem;padding:2rem;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.03);border:1px solid #f0efed;transition:all .3s;overflow:hidden;min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.cat-card::before{content:'';position:absolute;inset:0;background-size:cover;background-position:center;opacity:.4;transition:opacity .4s;pointer-events:none}
+.cat-card:hover::before{opacity:.65}
+.cat-card::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.55);pointer-events:none}
+.cat-card>*{position:relative;z-index:1}
 .cat-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.cat-card.sprocket::before{background-image:url(images/bg-sprocket.png)}
+.cat-card.spur::before{background-image:url(images/bg-spur.jpg)}
+.cat-card.bevel::before{background-image:url(images/bg-bevel.png)}
+.cat-card.spline::before{background-image:url(images/bg-spline.png)}
 .cat-card .cat-icon{font-size:2.2rem;margin-bottom:.8rem}
 .cat-card h3{font-size:1rem;font-weight:500;margin-bottom:.3rem}
 .cat-card .cat-en{font-size:.75rem;color:#a8a29e;letter-spacing:.05em;margin-bottom:.6rem}
@@ -161,25 +169,25 @@ footer{padding:2rem 3rem;text-align:center;font-size:.8rem;color:#a8a29e;border-
 <h2>What We Manufacture</h2>
 </div>
 <div class="cat-grid">
-<div class="cat-card">
+<div class="cat-card sprocket">
 <div class="cat-icon">&#9881;</div>
 <h3>链轮</h3>
 <div class="cat-en">Sprockets</div>
 <p>ANSI / BS / DIN standard sprockets, custom tooth profiles, single &amp; multi-strand. Roller chain, conveyor chain types.</p>
 </div>
-<div class="cat-card">
+<div class="cat-card spur">
 <div class="cat-icon">&#9881;</div>
 <h3>正齿轮</h3>
 <div class="cat-en">Spur Gears</div>
 <p>Module M0.5–M12, precision hobbing, 45# steel / 40Cr / stainless steel. Ground or shaved tooth finish available.</p>
 </div>
-<div class="cat-card">
+<div class="cat-card bevel">
 <div class="cat-icon">&#9881;</div>
 <h3>伞齿轮</h3>
 <div class="cat-en">Bevel Gears</div>
 <p>Straight &amp; spiral bevel gears, custom ratios, carburized &amp; hardened. Used in agricultural &amp; industrial transmissions.</p>
 </div>
-<div class="cat-card">
+<div class="cat-card spline">
 <div class="cat-icon">&#9881;</div>
 <h3>花键轴</h3>
 <div class="cat-en">Spline Shafts</div>
